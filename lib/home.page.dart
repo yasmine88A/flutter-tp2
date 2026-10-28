@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   int currIndex=1;
 
   List<Widget> pages=[
-    Homeview(), Loginview(), CardsView(),ProfileView(),
+    Homeview(), Loginview(), CardsView(isActive: false),ProfileView(),
 
   ];
 
@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     setState(
       (){
 currIndex=selectedIndex;
+pages[2] = CardsView(isActive: selectedIndex == 2);
       }
     );
     
